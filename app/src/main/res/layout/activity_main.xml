@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.daniel.convertapp.MainActivity">
+
+    <ImageButton
+        android:id="@+id/ib_temperatura"
+        style="@style/ButtonConverter"
+        android:backgroundTint="#7C2120" />
+
+    <ImageButton
+        android:id="@+id/ib_masa"
+        style="@style/ButtonConverter"
+        android:backgroundTint="@android:color/holo_blue_dark" />
+
+    <ImageButton
+        android:id="@+id/ib_udaljenost"
+        style="@style/ButtonConverter"
+        android:backgroundTint="@android:color/holo_orange_dark" />
+
+    <ImageButton
+        android:id="@+id/ib_brzina"
+        style="@style/ButtonConverter"
+        android:backgroundTint="@android:color/darker_gray" />
+
+</LinearLayout>
+

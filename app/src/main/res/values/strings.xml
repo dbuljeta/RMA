@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">ConvertApp</string>
+    <string name="bConvert">Convert</string>
+    <string name="tvFrom">From:</string>
+    <string name="tvTo">To:</string>
+    <string-array name="Udaljenost">
+        <item>km</item>
+        <item>m</item>
+        <item>dm</item>
+        <item>cm</item>
+        <item>mm</item>
+    </string-array>
+    <string-array name="Brzina">
+        <item>m/s</item>
+        <item>km/h</item>
+        <item>miles/h</item>
+
+    </string-array>
+    <string-array name="Masa">
+        <item>t</item>
+        <item>kg</item>
+        <item>gr</item>
+    </string-array>
+
+    <string-array name="Temp">
+        <item>°C</item>
+        <item>°F</item>
+        <item>K</item>
+    </string-array>
+</resources>
