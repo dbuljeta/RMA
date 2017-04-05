@@ -5,7 +5,16 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/holo_blue_dark"
     tools:context="com.example.daniel.convertapp.Masa">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Konverter mase"
+        android:id="@+id/tvResMas"
+        android:textSize="30sp"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"/>
     <EditText
         android:id="@+id/etConvMasa"
         android:layout_width="wrap_content"
@@ -52,14 +61,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="@string/bConvert"
+        android:backgroundTint="@android:color/holo_green_light"
         android:layout_marginTop="15dp" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/tvTo"
-        android:id="@+id/tvResMas"
-        android:textSize="30sp"
-        android:layout_gravity="center"
-        android:layout_margin="10dp"/>
+
 
 </LinearLayout>

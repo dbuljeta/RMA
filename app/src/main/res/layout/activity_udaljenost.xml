@@ -5,7 +5,16 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/holo_orange_dark"
     tools:context="com.example.daniel.convertapp.Udaljenost">
+    <TextView
+        android:id="@+id/tvdaj"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Konverter udaljenosti"
+        android:textSize="30sp"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"/>
     <EditText
         android:id="@+id/etConvUdaljenost"
         android:layout_width="wrap_content"
@@ -53,14 +62,7 @@
         android:layout_gravity="center"
         android:text="@string/bConvert"
         android:layout_marginTop="15dp" />
-    <TextView
-        android:id="@+id/tvdaj"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/tvTo"
-        android:textSize="30sp"
-        android:layout_gravity="center"
-        android:layout_margin="10dp"/>
+
 
 </LinearLayout>
 

@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -14,9 +15,11 @@ public class Udaljenost extends Activity implements View.OnClickListener {
     Button bConvert;
     TextView pokazi;
     EditText etConvUdaljenost;
+    Intent resultIntent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_udaljenost);
         setUpUI();
     }
@@ -44,12 +47,11 @@ public class Udaljenost extends Activity implements View.OnClickListener {
         Num2=Num1*(Koef);
         ConvResult=Double.toString(Num1)+ConvFrom+"="+Double.toString(Num2)+ConvTo;
 
-
-        //Intent convertResult=new Intent();
-       // convertResult.setClass(getApplicationContext(),ConvertResult.class);
-        pokazi.setText(ConvResult);
-
-       // this.startActivity(convertResult);
+        resultIntent=new Intent();
+        resultIntent.setClass(getApplicationContext(),Result.class);
+        resultIntent.putExtra("Result",ConvResult);
+        resultIntent.putExtra("ResultTitle","Konverter udaljenosti");
+        startActivity(resultIntent);
 
     }
 

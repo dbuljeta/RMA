@@ -5,15 +5,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.widget.ImageButton;
 
 public class MainActivity extends Activity implements View.OnClickListener {
-    private static final String TAG ="konj" ;
     ImageButton ibTemperatura,ibMasa,ibUdaljenost,ibBrzina;
     Intent converter=new Intent();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
         this.setUpUI();
     }
@@ -39,25 +40,24 @@ Intent converter=null;
                 converter=new Intent();
                 converter.setClass(getApplicationContext(), Temperatura.class);
                 this.startActivity(converter);
-                Log.d(TAG, "First activity can handle the request.");
+
                 break;
           case (R.id.ib_masa):
               converter=new Intent();
                 converter.setClass(getApplicationContext(), Masa.class);
-                Log.d(TAG, "second activity can handle the request.");
+
                 this.startActivity(converter);
 
                 break;
          case (R.id.ib_udaljenost):
              converter=new Intent();
                 converter.setClass(getApplicationContext(), Udaljenost.class);
-                Log.d(TAG, "third activity can handle the request.");
                 this.startActivity(converter);
                 break;
               case (R.id.ib_brzina):
                   converter=new Intent();
                 converter.setClass(getApplicationContext(), Brzina.class);
-                Log.d(TAG, "third activity can handle the request.");
+
                 this.startActivity(converter);
                 break;
         }

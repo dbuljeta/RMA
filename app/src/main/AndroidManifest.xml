@@ -16,13 +16,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".Brzina" ></activity>
-        <activity android:name=".Masa" ></activity>
-        <activity android:name=".Temperatura"></activity>
-        <activity android:name=".Udaljenost"></activity>
-
-
+        <activity android:name=".Brzina" />
+        <activity android:name=".Masa" />
+        <activity android:name=".Temperatura" />
+        <activity android:name=".Udaljenost" />
+        <activity android:name=".Result"></activity>
     </application>
 
 </manifest>

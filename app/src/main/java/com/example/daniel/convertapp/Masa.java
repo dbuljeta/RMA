@@ -1,28 +1,35 @@
 package com.example.daniel.convertapp;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 public class Masa extends Activity implements View.OnClickListener {
-    EditText etConvMasa= (EditText) findViewById(R.id.etConvMasa);
+    EditText etConvMasa;
     Spinner spinMasa1,spinMasa2;
-    Button bConvMasa= (Button) findViewById(R.id.bConvMasa);
-    TextView tvResBrz= (TextView) findViewById(R.id.tvResMas);
+    Button bConvMasa;
+    TextView tvResBrz;
+    Intent resultIntent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_masa);
        this.setUpUI();
     }
     private void setUpUI() {
         spinMasa1= (Spinner) findViewById(R.id.spinMasa1);
         spinMasa2= (Spinner) findViewById(R.id.spinMasa2);
+        etConvMasa= (EditText) findViewById(R.id.etConvMasa);
+        tvResBrz= (TextView) findViewById(R.id.tvResMas);
+        bConvMasa= (Button) findViewById(R.id.bConvMasa);
         bConvMasa.setOnClickListener(this);
     }
 
@@ -40,7 +47,11 @@ public class Masa extends Activity implements View.OnClickListener {
 
         Num2=Num1*(Koef);
         ConvResult=Double.toString(Num1)+ConvFrom+"="+Double.toString(Num2)+ConvTo;
-        tvResBrz.setText(ConvResult);
+        resultIntent=new Intent();
+        resultIntent.setClass(getApplicationContext(),Result.class);
+        resultIntent.putExtra("Result",ConvResult);
+        resultIntent.putExtra("ResultTitle","Konverter mase");
+        startActivity(resultIntent);
 
     }
 

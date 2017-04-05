@@ -1,21 +1,25 @@
 package com.example.daniel.convertapp;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 public class Brzina extends Activity implements View.OnClickListener {
-    EditText etConvBrzina= (EditText) findViewById(R.id.etConvBrzina);
+    EditText etConvBrzina;
     Spinner spinBrzina1,spinBrzina2;
-    Button bConvBrzina= (Button) findViewById(R.id.bConvBrzina);
-    TextView tvResBrz= (TextView) findViewById(R.id.tvResBrz);
+    Button bConvBrzina;
+    TextView tvResBrz;
+    Intent resultIntent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_brzina);
         this.setUpUI();
     }
@@ -23,6 +27,9 @@ public class Brzina extends Activity implements View.OnClickListener {
     private void setUpUI() {
         spinBrzina1= (Spinner) findViewById(R.id.spinBrzina1);
         spinBrzina2= (Spinner) findViewById(R.id.spinBrzina2);
+        tvResBrz= (TextView) findViewById(R.id.tvResBrz);
+        etConvBrzina= (EditText) findViewById(R.id.etConvBrzina);
+        bConvBrzina= (Button) findViewById(R.id.bConvBrzina);
         bConvBrzina.setOnClickListener(this);
     }
 
@@ -40,7 +47,11 @@ public class Brzina extends Activity implements View.OnClickListener {
 
         Num2=Num1*(Koef);
         ConvResult=Double.toString(Num1)+ConvFrom+"="+Double.toString(Num2)+ConvTo;
-        tvResBrz.setText(ConvResult);
+        resultIntent=new Intent();
+        resultIntent.setClass(getApplicationContext(),Result.class);
+        resultIntent.putExtra("Result",ConvResult);
+        resultIntent.putExtra("ResultTitle","Konverter brzine");
+        startActivity(resultIntent);
 
 
     }
