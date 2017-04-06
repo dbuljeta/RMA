@@ -3,6 +3,10 @@
     <string name="bConvert">Convert</string>
     <string name="tvFrom">From:</string>
     <string name="tvTo">To:</string>
+    <string name="DistHint">Type distance</string>
+    <string name="TempHint">Type temperature</string>
+    <string name="MasHint">Type weight</string>
+    <string name="BrzHint">Type speed</string>
     <string-array name="Udaljenost">
         <item>km</item>
         <item>m</item>

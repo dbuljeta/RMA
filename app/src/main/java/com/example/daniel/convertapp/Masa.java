@@ -2,8 +2,12 @@ package com.example.daniel.convertapp;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -17,6 +21,7 @@ public class Masa extends Activity implements View.OnClickListener {
     Button bConvMasa;
     TextView tvResBrz;
     Intent resultIntent;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,7 +35,9 @@ public class Masa extends Activity implements View.OnClickListener {
         etConvMasa= (EditText) findViewById(R.id.etConvMasa);
         tvResBrz= (TextView) findViewById(R.id.tvResMas);
         bConvMasa= (Button) findViewById(R.id.bConvMasa);
+
         bConvMasa.setOnClickListener(this);
+
     }
 
     @Override
@@ -40,8 +47,10 @@ public class Masa extends Activity implements View.OnClickListener {
 
 
         Num1 = Double.parseDouble(etConvMasa.getText().toString());
+
         ConvFrom=spinMasa1.getSelectedItem().toString();
         ConvTo=spinMasa2.getSelectedItem().toString();
+
 
         Koef=getKoefMas(ConvFrom,ConvTo);
 
@@ -50,6 +59,7 @@ public class Masa extends Activity implements View.OnClickListener {
         resultIntent=new Intent();
         resultIntent.setClass(getApplicationContext(),Result.class);
         resultIntent.putExtra("Result",ConvResult);
+
         resultIntent.putExtra("ResultTitle","Konverter mase");
         startActivity(resultIntent);
 

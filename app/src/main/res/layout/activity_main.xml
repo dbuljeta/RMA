@@ -11,28 +11,28 @@
         android:scaleType="fitCenter"
         android:id="@+id/ib_temperatura"
         style="@style/ButtonConverter"
-        android:backgroundTint="#7C2020" />
+        android:background="#7C2020" />
 
     <ImageButton
         android:src="@drawable/mass"
         android:scaleType="fitCenter"
         android:id="@+id/ib_masa"
         style="@style/ButtonConverter"
-        android:backgroundTint="@android:color/holo_blue_dark" />
+        android:background="@android:color/holo_blue_dark" />
 
     <ImageButton
         android:src="@drawable/distance"
         android:scaleType="fitCenter"
         android:id="@+id/ib_udaljenost"
         style="@style/ButtonConverter"
-        android:backgroundTint="@android:color/holo_orange_dark" />
+        android:background="@android:color/holo_orange_dark" />
 
     <ImageButton
         android:src="@drawable/speed"
         android:scaleType="fitCenter"
         android:id="@+id/ib_brzina"
         style="@style/ButtonConverter"
-        android:backgroundTint="@android:color/darker_gray" />
+        android:background="@android:color/darker_gray" />
 
 </LinearLayout>
 
